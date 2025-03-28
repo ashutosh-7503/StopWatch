@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState,useEffect } from "react";
 
 export default function App(){
   // let x=0,y=0;
@@ -7,6 +7,11 @@ export default function App(){
   // const [stopTime,setStopTime]=useState(0);
   const timePassed=useRef(0);
   const intervalId=useRef(0);
+
+  useEffect(() => {
+    return () => clearInterval(intervalId.current); // Cleanup on unmount
+  }, []);
+
   var display=0;
   let b=false;
   const handleStart=()=>{
