@@ -1,12 +1,55 @@
-# React + Vite
+# Stopwatch Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simple **Stopwatch Application** built using **React and Vite**. It demonstrates the proper use of **useState**, **useRef**, and **setInterval** to create a functional timer with start, stop, and reset functionalities.
 
-Currently, two official plugins are available:
+## Features
+- Start, stop, and reset a stopwatch
+- Time display updates dynamically
+- Uses **useRef** to persist values across renders without causing re-renders
+- Uses **useState** for managing state changes
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- **React**: A JavaScript library for building user interfaces
+- **Vite**: A fast build tool for modern web applications
+- **Hooks Used:**
+  - `useState`: Manages the timer state
+  - `useRef`: Stores mutable values that persist across renders without triggering re-renders
+  - `setInterval`: Updates the displayed time every 100ms
 
-## Expanding the ESLint configuration
+## Project Setup
+To run this project locally, follow these steps:
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1️⃣ Clone the repository
+```bash
+ git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+```
+
+### 2️⃣ Navigate to the project folder
+```bash
+cd YOUR_PROJECT_FOLDER
+```
+
+### 3️⃣ Install dependencies
+```bash
+npm install
+```
+
+### 4️⃣ Start the Vite development server
+```bash
+npm run dev
+```
+
+## Key Concepts Demonstrated
+### 🔹 **useState**
+- Manages `startTime` and `currentTime` state to track when the timer starts and updates.
+
+### 🔹 **useRef**
+- Stores **mutable values** (`timePassed`, `intervalId`) that persist across renders without causing re-renders.
+
+## Potential Improvements
+- Enhance styling with **CSS or TailwindCSS**.
+- Display **lap times** or add a **pause** feature.
+
+## License
+This project is open-source and free to use. Contributions are welcome! 🚀
+
