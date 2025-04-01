@@ -23,19 +23,19 @@ export default function App(){
   }, []);
 
   var display=0;
-  let b=false;
+  // let b=false;
   const handleStart=()=>{
-      if(b==false&&intervalId.current!=0) return;
+      // if(b==false&&intervalId.current!=0) return;
       setStartTime(Date.now()-timePassed.current*1000);
       setCurrentTime(Date.now);
       clearInterval(intervalId.current);
-      b=false;
+      // b=false;
       intervalId.current=setInterval(()=>{
           setCurrentTime(Date.now);
       },100);
   }
   const handleStop=()=>{
-    b=true;
+    // b=true;
     clearInterval(intervalId.current);
     timePassed.current=((currentTime-startTime)/1000).toFixed(3);
     // console.log(timePassed.current);
