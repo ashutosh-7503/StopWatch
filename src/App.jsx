@@ -8,6 +8,16 @@ export default function App(){
   const timePassed=useRef(0);
   const intervalId=useRef(0);
 
+  const [position,setPosition]=useState({x:0,y:0});
+  useEffect(()=>{
+    const handleMove=(e)=>{
+        setPosition({x:e.clientX,y:e.clientY});
+    }
+    window.addEventListener("mousemove",handleMove);
+    return ()=>{
+      window.removeEventListener("mousemove",handleMove);
+    }
+  },[])
   useEffect(() => {
     return () => clearInterval(intervalId.current); // Cleanup on unmount
   }, []);
@@ -39,6 +49,10 @@ export default function App(){
   }
   display=((currentTime-startTime)/1000);
   return (
+    <>
+    <div className="pointer" style={{
+     transform:  `translate(${position.x}px,${position.y}px)`
+    }}></div>
     <div className="stopWatch">
       <p style={{fontSize: '4rem'}}>
         {display.toFixed(3)}sec</p>
@@ -46,6 +60,7 @@ export default function App(){
       <button onClick={handleStop}>Stop</button>
       <button onClick={handleReset}>Reset</button>
     </div>
+    </>
   )
  
 }
